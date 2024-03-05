@@ -17,6 +17,5 @@ def pascal_triangle(n):
                 else:
                     new.append(temp[j] + temp[j - 1])
             temp = new
-            print(temp)
             all.append(new)
         return all
