@@ -18,6 +18,8 @@ def recursion_function(boxes, unlockBox, boxes_status):
         return True
     new = []
     for key in unlockBox:
+        if key > len(boxes) - 1:
+            continue
         if boxes_status[key] == 0:
             new = new + boxes[key]
             boxes_status[key] = 1
