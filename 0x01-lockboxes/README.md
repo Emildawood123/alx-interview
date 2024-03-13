@@ -1,0 +1,1 @@
+use recursive and i can use set to make the code excute faster but i have no time ***k U
