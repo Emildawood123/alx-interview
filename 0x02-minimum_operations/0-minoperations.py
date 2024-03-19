@@ -2,6 +2,7 @@
 """minOperations functions"""
 from sympy import isprime
 
+
 def minOperations(n):
     """minOperations functions"""
     if n <= 1:
@@ -19,9 +20,3 @@ def minOperations(n):
     except Exception:
         return n
     return int((n / remind) + remind)
-
-n = 4
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-
-n = 12
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
