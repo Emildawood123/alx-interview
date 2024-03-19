@@ -20,7 +20,3 @@ def minOperations(n):
     while remind % 2 == 0 and remind != 2:
         remind = remind / 2
     return int((n / remind) + remind)
-
-
-n = 40
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
