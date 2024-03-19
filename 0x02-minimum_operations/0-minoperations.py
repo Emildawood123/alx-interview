@@ -18,6 +18,6 @@ def minOperations(n):
             pass
     except Exception:
         return n
-    if remind % 2 == 0:
+    if remind % 2 == 0 and remind != 2:
         remind = remind / 2
     return int((n / remind) + remind)
