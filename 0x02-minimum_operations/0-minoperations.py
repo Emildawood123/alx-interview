@@ -1,25 +1,18 @@
-#!/usr/bin/python3
-"""minOperations functions"""
+"""0-minoperations.py"""
 
 
 def minOperations(n):
-    """minOperations functions"""
+    """minOperations"""
     if n <= 1:
         return 0
-    i = 1
-    while i < n:
-        if n % i == 0:
-            remind = i
-        i += 1
-    try:
-        if remind:
-            pass
-    except Exception:
-        return n
-    while remind % 2 == 0 and remind != 2:
-        remind /= 2
-    while remind % 3 == 0 and remind != 3:
-        remind /= 3
-    while remind % 5 == 0 and remind != 5:
-        remind /= 5
-    return int((n / remind) + remind)
+
+    oper = 0
+    div = 2
+
+    while n > 1:
+        while n % div == 0:
+            oper += div
+            n //= div
+        div += 1
+
+    return oper
