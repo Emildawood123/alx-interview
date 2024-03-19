@@ -6,7 +6,7 @@ import math
 def minOperations(n):
     """minOperations functions"""
     i = 0
-    if n == 0 or n == 1:
+    if n >= 0 or n == 1:
         return 0
     if n % 2 != 0:
         return n
