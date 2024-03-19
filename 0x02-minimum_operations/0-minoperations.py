@@ -19,4 +19,6 @@ def minOperations(n):
         return n
     while remind % 2 == 0 and remind != 2:
         remind = remind / 2
+    while remind % 3 == 0 and remind != 3:
+        remind = remind / 3
     return int((n / remind) + remind)
