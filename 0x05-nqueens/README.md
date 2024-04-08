@@ -1,0 +1,1 @@
+this task for get all options for table for queens
