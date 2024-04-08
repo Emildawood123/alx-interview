@@ -1,61 +1,47 @@
-#!/usr/bin/python3
-"""Queens interview"""
-import sys
-def initailize_with_first(first_row, n):
-    table = []
-    table.append(first_row)
-    for row in range(1, n):
-        tables_second = list(map(lambda x: x[1], table))
-        for stage in range(n):
-            try:
-                if stage == 0:
-                    if stage in tables_second:
-                        continue
-                    elif table[row - 1][1] != stage + 1:
-                        table.append([row, stage])
-                        break
-                    else:
-                        continue
-                elif stage == n - 1:
-                    if stage in tables_second:
-                        continue
-                    elif table[row - 1][1] != stage - 1:
-                        table.append([row, stage])
-                        break
-                    else:
-                        continue
-                else:
-                    if stage in tables_second:
-                        continue
-                    elif table[row - 1][1] != stage + 1 and table[row - 1][1] != stage - 1:
-                        table.append([row, stage])
-                        break
-                    else:
-                        continue
-            except Exception:
-                return False
-    if len(table):
-        return table
+class GfG:
+    def __init__(self):
+        self.MAX = 10
+        self.arr = [0] * self.MAX
 
-if len(sys.argv) == 1:
-    print("Usage: nqueens N")
-    exit(1)
-else:
-    after_convert = int(sys.argv[1])
-    if type(after_convert) != int:
+    def canPlace(self, k, i):
+        for j in range(1, k):
+            if (self.arr[j] == i or
+               (abs(self.arr[j] - i) == abs(j - k))):
+                return False
+        return True
+ 
+    def display(self, n):
+         
+        # Function to display placed queen
+        arr = []
+        for i in range(1, n + 1):
+            for j in range(1, n + 1):
+                if self.arr[i] != j:
+                    continue
+                else:
+                    arr.append([i - 1, j - 1])
+        print(arr)
+ 
+    def nQueens(self, k, n):
+        for i in range(1, n + 1):
+            if self.canPlace(k, i):
+                self.arr[k] = i
+                if k == n:
+                    self.display(n)
+                else:
+                    self.nQueens(k + 1, n)
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) == 0:
+        print("Usage: nqueens N")
+        exit(1)
+    convert = int(sys.argv[1])
+    if type(convert) != int:
         print("N must be a number")
         exit(1)
-    elif after_convert < 4:
+    if convert < 4:
         print("N must be at least 4")
         exit(1)
-    else:
-        tables = []
-        for i in range(after_convert):
-            first_row = [0, i]
-            table = initailize_with_first(first_row, after_convert)
-            if type(table) == list:
-                tables.append(table)
-            else:
-                continue
-        for i in tables:
-            print (i)
+    n = convert
+    obj = GfG()
+    obj.nQueens(1, n)
