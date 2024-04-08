@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class GfG:
     def __init__(self):
         self.MAX = 10
@@ -11,8 +12,6 @@ class GfG:
         return True
  
     def display(self, n):
-         
-        # Function to display placed queen
         arr = []
         for i in range(1, n + 1):
             for j in range(1, n + 1):
@@ -32,7 +31,7 @@ class GfG:
                     self.nQueens(k + 1, n)
 if __name__ == '__main__':
     import sys
-    if len(sys.argv) == 0:
+    if len(sys.argv) == 1:
         print("Usage: nqueens N")
         exit(1)
     convert = int(sys.argv[1])
