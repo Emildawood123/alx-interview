@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""GfG class"""
 class GfG:
+    """GfG class"""
     def __init__(self):
         self.MAX = 10
         self.arr = [0] * self.MAX
