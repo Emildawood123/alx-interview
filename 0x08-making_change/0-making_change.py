@@ -4,7 +4,7 @@
 
 def makeChange(coins, total):
     """makeChange method"""
-    if total <= 0:
+    if total < 0:
         return 0
     count = 0
     coins.sort()
