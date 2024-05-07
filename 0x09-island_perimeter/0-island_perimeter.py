@@ -19,3 +19,4 @@ def island_perimeter(grid):
                     res += 1
                 if grid[row][col + 1] == 0 and grid[row + 1][col] == 0:
                     return res
+    return 0
