@@ -5,9 +5,13 @@
 def island_perimeter(grid):
     """island_perimeter"""
     res = 0
-    for row in range(1, len(grid)):
-        for col in range(1, len(grid[row])):
+    for row in range(len(grid)):
+        for col in range(len(grid[row])):
             if grid[row][col] == 1:
+                if row == 0 or col == 0:
+                    return 0
+                if row == len(grid) - 1 or col == len(grid[row]) - 1:
+                    return 0
                 if grid[row - 1][col] == 0:
                     res += 1
                 if grid[row][col - 1] == 0:
