@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def isWinner(x, nums):
     def is_prime_arr(arr):
         for number in arr:
