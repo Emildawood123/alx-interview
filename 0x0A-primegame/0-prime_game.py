@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""isWinner method"""
 
 
 def isWinner(x, nums):
+    """isWinner method"""
     def is_prime_arr(arr):
+        """is_prime_arr method"""
         for number in arr:
             if number <= 1:
                 continue
