@@ -26,7 +26,7 @@ def isWinner(x, nums):
             ben_score += 1
         else:
             maria_score += 1
-    return "maria" if maria_score > ben_score else "ben"
+    return "Maria" if maria_score > ben_score else "Ben"
 
 
 def is_prime_arr(arr):
