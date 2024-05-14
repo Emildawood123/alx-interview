@@ -1,6 +1,15 @@
 #!/usr/bin/python3
 
 def isWinner(x, nums):
+    def is_prime_arr(arr):
+        for number in arr:
+            if number <= 1:
+                continue
+            for i in range(2, int(number**0.5) + 1):
+                if number % i == 0:
+                    continue
+            return number
+        return False
     ben_score = 0
     maria_score = 0
     for i in range(x):
@@ -29,14 +38,3 @@ def isWinner(x, nums):
     if maria_score == ben_score:
         return None
     return "Maria" if maria_score > ben_score else "Ben"
-
-
-def is_prime_arr(arr):
-    for number in arr:
-        if number <= 1:
-            continue
-        for i in range(2, int(number**0.5) + 1):
-            if number % i == 0:
-                continue
-        return number
-    return False
